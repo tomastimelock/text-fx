@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "text-fx"
+name = "text-fx-engine"
 dynamic = ["version"]
 description = "120 named text overlay effects for video. The text-effects engine of the Trollfabriken stack."
 readme = "README.md"
