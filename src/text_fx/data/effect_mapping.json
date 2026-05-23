@@ -1,0 +1,1132 @@
+[
+  {
+    "slug": "fade_in",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "in"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "fade_out",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "out"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "cross_dissolve_text",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "cross"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "hard_cut_title",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "hard"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "dip_to_black_title",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "dip_black"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "dip_to_white_title",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "dip_white"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "blur_fade_in",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "in",
+      "blur": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "blur_fade_out",
+    "base_engine": "fade",
+    "engine_bucket": "alpha",
+    "params": {
+      "direction": "out",
+      "blur": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "typewriter",
+    "base_engine": "typewriter",
+    "engine_bucket": "alpha",
+    "params": {
+      "show_cursor": false
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "cursor_typewriter",
+    "base_engine": "typewriter",
+    "engine_bucket": "alpha",
+    "params": {
+      "show_cursor": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "backspace_delete",
+    "base_engine": "typewriter",
+    "engine_bucket": "alpha",
+    "params": {
+      "reverse": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "word_reveal",
+    "base_engine": "cascade",
+    "engine_bucket": "alpha",
+    "params": {
+      "unit": "word"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "line_reveal",
+    "base_engine": "cascade",
+    "engine_bucket": "alpha",
+    "params": {
+      "unit": "line"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "character_fade_cascade",
+    "base_engine": "cascade",
+    "engine_bucket": "alpha",
+    "params": {
+      "unit": "char"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "word_fade_cascade",
+    "base_engine": "cascade",
+    "engine_bucket": "alpha",
+    "params": {
+      "unit": "word",
+      "fade": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "kinetic_pop",
+    "base_engine": "bounce",
+    "engine_bucket": "kinetic",
+    "params": {
+      "scale_start": 0.8,
+      "scale_overshoot": 1.1
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "bounce_text",
+    "base_engine": "bounce",
+    "engine_bucket": "kinetic",
+    "params": {},
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "elastic_text",
+    "base_engine": "spring",
+    "engine_bucket": "kinetic",
+    "params": {
+      "frequency": 12.0,
+      "damping": 2.0
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "punch_zoom_title",
+    "base_engine": "bounce",
+    "engine_bucket": "kinetic",
+    "params": {
+      "scale_start": 3.0,
+      "motion_blur": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "impact_slam",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "down",
+      "shake": true,
+      "impact_frames": 5
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "drop_in",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "down"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "rise_up",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "up",
+      "fade": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "slide_left_text",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "left"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "slide_right_text",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "right"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "slide_up_text",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "up"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "slide_down_text",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "down"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "overshoot_slide",
+    "base_engine": "slide",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "left",
+      "overshoot": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "spring_words",
+    "base_engine": "spring",
+    "engine_bucket": "kinetic",
+    "params": {
+      "per_word": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "scale_cascade",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "scale_cascade"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "wave_text",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "wave"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "jitter_text",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "jitter"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "shake_text",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "shake"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "wiggle_text",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "wiggle"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "spin_in",
+    "base_engine": "spin",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "in"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "spin_out",
+    "base_engine": "spin",
+    "engine_bucket": "kinetic",
+    "params": {
+      "direction": "out"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "flip_x",
+    "base_engine": "spin",
+    "engine_bucket": "kinetic",
+    "params": {
+      "axis": "x"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "flip_y",
+    "base_engine": "spin",
+    "engine_bucket": "kinetic",
+    "params": {
+      "axis": "y"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "3d_rotate_title",
+    "base_engine": "spin",
+    "engine_bucket": "kinetic",
+    "params": {
+      "axis": "perspective"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "orbit_text",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "orbit"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "circular_text_motion",
+    "base_engine": "oscillate",
+    "engine_bucket": "kinetic",
+    "params": {
+      "mode": "circular"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "linear_wipe_reveal",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "left_to_right"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "left_wipe",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "left_to_right"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "right_wipe",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "right_to_left"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "top_wipe",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "top_to_bottom"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "bottom_wipe",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "bottom_to_top"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "split_reveal",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "split"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "center_slice_reveal",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "center_out"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "circle_reveal",
+    "base_engine": "radial",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "circle"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "radial_reveal",
+    "base_engine": "radial",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "wedge"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "diagonal_wipe",
+    "base_engine": "linear_wipe",
+    "engine_bucket": "mask",
+    "params": {
+      "direction": "diagonal"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "venetian_blinds",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "venetian",
+      "count": 10
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "vertical_blinds",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "vertical_blinds",
+      "count": 10
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "shutter_reveal",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "shutter",
+      "count": 6
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "box_reveal",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "box"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "frame_reveal",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "frame"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "ink_matte_reveal",
+    "base_engine": "organic",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "ink"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "smoke_matte_reveal",
+    "base_engine": "organic",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "smoke"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "paint_brush_reveal",
+    "base_engine": "organic",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "brush"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "scratch_reveal",
+    "base_engine": "organic",
+    "engine_bucket": "mask",
+    "params": {
+      "mode": "scratch"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "glitch_mask_reveal",
+    "base_engine": "shaped",
+    "engine_bucket": "mask",
+    "params": {
+      "shape": "glitch_slices",
+      "count": 12
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "rgb_split_text",
+    "base_engine": "rgb_shift",
+    "engine_bucket": "glitch",
+    "params": {
+      "offset": 10
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "chromatic_aberration",
+    "base_engine": "rgb_shift",
+    "engine_bucket": "glitch",
+    "params": {
+      "offset": 3
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "digital_glitch_title",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "slices",
+      "slice_count": 15
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "data_moshing_text",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "datamosh"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "pixel_sort_text",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "pixel_sort"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "scanline_text",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "scanline"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "crt_flicker",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "flicker"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "vhs_title",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "vhs"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "bad_signal",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "bad_signal"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "terminal_text",
+    "base_engine": "decode",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "terminal"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "matrix_rain_behind_text",
+    "base_engine": "decode",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "matrix",
+      "background_rain": true
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "hacker_decode",
+    "base_engine": "decode",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "hacker"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "binary_decode",
+    "base_engine": "decode",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "binary",
+      "charset": "binary"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "hud_text",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "hud",
+      "hud_lines": true
+    },
+    "prefer_engine": "web_overlay"
+  },
+  {
+    "slug": "cyberpunk_neon_glitch",
+    "base_engine": "rgb_shift",
+    "engine_bucket": "glitch",
+    "params": {
+      "offset": 8,
+      "glow": true
+    },
+    "prefer_engine": "web_overlay"
+  },
+  {
+    "slug": "pixelated_reveal",
+    "base_engine": "scanline",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "pixelate"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "block_corruption",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "blocks"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "glitch_flash",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "flash"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "static_noise_fill",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "static"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "digital_tear",
+    "base_engine": "slice_corrupt",
+    "engine_bucket": "glitch",
+    "params": {
+      "mode": "tear"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "wave_distortion",
+    "base_engine": "sine_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "wave",
+      "amplitude_y": 15.0,
+      "frequency": 2.0
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "heat_haze_text",
+    "base_engine": "sine_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "heat",
+      "amplitude_y": 8.0
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "liquid_ripple",
+    "base_engine": "radial_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "ripple",
+      "strength": 0.5
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "magnify_text",
+    "base_engine": "radial_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "magnify",
+      "strength": 0.6
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "bulge_text",
+    "base_engine": "radial_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "bulge",
+      "strength": 0.5
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "pinch_text",
+    "base_engine": "radial_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "pinch",
+      "strength": 0.5
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "twirl_text",
+    "base_engine": "radial_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "twirl",
+      "strength": 0.6
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "stretch_text",
+    "base_engine": "displacement",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "stretch"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "smear_text",
+    "base_engine": "displacement",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "smear"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "echo_trails",
+    "base_engine": "sine_warp",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "echo",
+      "echo_count": 4
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "motion_blur_text",
+    "base_engine": "motion_blur",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "directional",
+      "kernel_length": 30
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "zoom_blur_text",
+    "base_engine": "motion_blur",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "zoom",
+      "kernel_length": 20
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "broken_glass_text",
+    "base_engine": "displacement",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "shatter",
+      "shard_count": 16
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "paper_tear_text",
+    "base_engine": "displacement",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "tear",
+      "shard_count": 8
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "pixel_melt",
+    "base_engine": "motion_blur",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "melt"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "sand_dissolve",
+    "base_engine": "particle",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "sand"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "particle_disperse",
+    "base_engine": "particle",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "disperse"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "ash_disintegration",
+    "base_engine": "particle",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "ash"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "fragment_explosion",
+    "base_engine": "particle",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "explode"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "magnetic_assemble",
+    "base_engine": "particle",
+    "engine_bucket": "distortion",
+    "params": {
+      "mode": "assemble"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "neon_glow_text",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#FF00FF",
+      "blur_radius": 24,
+      "intensity": 1.5,
+      "mode": "glow"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "neon_flicker",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#FF00FF",
+      "blur_radius": 20,
+      "flicker": true,
+      "mode": "glow"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "light_sweep",
+    "base_engine": "sweep",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "linear_sweep"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "glow_pulse",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#00FFFF",
+      "blur_radius": 20,
+      "pulse": true,
+      "mode": "pulse"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "aura_text",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#8800FF",
+      "blur_radius": 32,
+      "mode": "aura"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "laser_scan_text",
+    "base_engine": "sweep",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "laser"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "hologram_text",
+    "base_engine": "shimmer",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "hologram"
+    },
+    "prefer_engine": "web_overlay"
+  },
+  {
+    "slug": "projected_light_text",
+    "base_engine": "shimmer",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "projected"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "spotlight_text",
+    "base_engine": "sweep",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "spotlight"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "shadow_cast_title",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#000000",
+      "blur_radius": 16,
+      "mode": "shadow"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "gold_shine",
+    "base_engine": "shimmer",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "gold"
+    },
+    "prefer_engine": "web_overlay"
+  },
+  {
+    "slug": "chrome_shine",
+    "base_engine": "shimmer",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "chrome"
+    },
+    "prefer_engine": "web_overlay"
+  },
+  {
+    "slug": "fire_glow",
+    "base_engine": "glow",
+    "engine_bucket": "neon",
+    "params": {
+      "color": "#FF6600",
+      "blur_radius": 28,
+      "mode": "fire"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "electric_outline",
+    "base_engine": "sparkle",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "electric"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "lightning_text",
+    "base_engine": "sparkle",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "lightning"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "strobe_title",
+    "base_engine": "sweep",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "strobe",
+      "strobe_hz": 6.0
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "flash_frame_title",
+    "base_engine": "sweep",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "flash"
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "lens_dust_sparkle",
+    "base_engine": "sparkle",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "dust",
+      "count": 30
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "star_sparkle_text",
+    "base_engine": "sparkle",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "star",
+      "count": 20,
+      "star_points": 4
+    },
+    "prefer_engine": "auto"
+  },
+  {
+    "slug": "bokeh_text",
+    "base_engine": "shimmer",
+    "engine_bucket": "neon",
+    "params": {
+      "mode": "bokeh",
+      "bokeh_count": 25
+    },
+    "prefer_engine": "web_overlay"
+  }
+]

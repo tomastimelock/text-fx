@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "text-fx"
+dynamic = ["version"]
+description = "120 named text overlay effects for video. The text-effects engine of the Trollfabriken stack."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Trollfabriken AITrix AB", email = "dev@trollfabriken.se" }]
+keywords = ["text", "captions", "titles", "video", "motion-graphics", "animation", "ffmpeg", "overlay"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "pydantic >= 2.5",
+    "numpy >= 1.24",
+    "Pillow >= 10.0",
+    "opencv-python-headless >= 4.8",
+    "ffmpeg-python >= 0.2",
+]
+
+[project.optional-dependencies]
+overlay = ["web-overlay >= 0.1"]
+fonts = ["fonttools >= 4.43"]
+dev = ["pytest >= 7", "pytest-cov >= 4", "ruff >= 0.4", "build"]
+all = ["text-fx[overlay,fonts]"]
+
+[project.scripts]
+text-fx = "text_fx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tomastimelock/text-fx"
+Issues = "https://github.com/tomastimelock/text-fx/issues"
+
+[tool.hatch.version]
+source = "regex"
+path = "src/text_fx/__init__.py"
+pattern = '__version__ = "(?P<version>[^"]+)"'
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/text_fx"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/text_fx/data/effects_catalog.json" = "text_fx/data/effects_catalog.json"
+"src/text_fx/data/effect_mapping.json" = "text_fx/data/effect_mapping.json"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

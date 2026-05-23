@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# venvs
+.venv/
+venv/
+env/
+.python-version
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mp3
+*.wav
+*.flac
+!tests/fixtures/*.mp4
+!tests/fixtures/*.wav
+.uv-cache/
+
+# Generated artifacts during development
+scratch/
+tmp/
+out/
+output/
+*.tmp
+
+# Ruff
+.ruff_cache/
+
+# Hatch
+.hatch/

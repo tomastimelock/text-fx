@@ -1,0 +1,1095 @@
+{
+  "schema_version": "1.0",
+  "package": "text-fx",
+  "transition_count": 120,
+  "categories": [
+    "basic_editing",
+    "kinetic_typography",
+    "mask_reveal",
+    "glitch_digital",
+    "distortion_warp",
+    "light_neon"
+  ],
+  "transitions": [
+    {
+      "name": "Fade In",
+      "slug": "fade_in",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text opacity ramps from 0 to 100%.",
+      "implementation_note": "Interpolate alpha over time; MoviePy CompositeVideoClip with TextClip mask or PIL text layer; easing with numpy."
+    },
+    {
+      "name": "Fade Out",
+      "slug": "fade_out",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text opacity ramps from 100% to 0%.",
+      "implementation_note": "Reverse alpha interpolation."
+    },
+    {
+      "name": "Cross Dissolve Text",
+      "slug": "cross_dissolve_text",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "One text layer dissolves into another.",
+      "implementation_note": "Render two text layers and crossfade alpha curves."
+    },
+    {
+      "name": "Hard Cut Title",
+      "slug": "hard_cut_title",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Instant title appearance with no interpolation.",
+      "implementation_note": "Place TextClip on timeline with no transition."
+    },
+    {
+      "name": "Dip to Black Title",
+      "slug": "dip_to_black_title",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text fades through a black background.",
+      "implementation_note": "Add black ColorClip underneath; fade text/background opacity."
+    },
+    {
+      "name": "Dip to White Title",
+      "slug": "dip_to_white_title",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text flashes or fades through white.",
+      "implementation_note": "Composite white ColorClip during transition."
+    },
+    {
+      "name": "Blur Fade In",
+      "slug": "blur_fade_in",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text starts blurred and transparent, then sharpens.",
+      "implementation_note": "Use PIL/OpenCV GaussianBlur decreasing radius while alpha increases."
+    },
+    {
+      "name": "Blur Fade Out",
+      "slug": "blur_fade_out",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Text blurs away as it fades.",
+      "implementation_note": "Increase blur radius while reducing alpha."
+    },
+    {
+      "name": "Typewriter",
+      "slug": "typewriter",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Characters appear sequentially like typing.",
+      "implementation_note": "Render text substrings per frame; use PIL/ImageDraw or MoviePy TextClip."
+    },
+    {
+      "name": "Cursor Typewriter",
+      "slug": "cursor_typewriter",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Typewriter reveal with blinking cursor.",
+      "implementation_note": "Render substring plus cursor; blink with modulo frame count."
+    },
+    {
+      "name": "Backspace Delete",
+      "slug": "backspace_delete",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Characters disappear in reverse order.",
+      "implementation_note": "Render progressively shorter substrings."
+    },
+    {
+      "name": "Word Reveal",
+      "slug": "word_reveal",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Words appear one by one.",
+      "implementation_note": "Split text on spaces and reveal tokens by timestamp."
+    },
+    {
+      "name": "Line Reveal",
+      "slug": "line_reveal",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Lines appear one by one.",
+      "implementation_note": "Render multiline text with per-line alpha masks."
+    },
+    {
+      "name": "Character Fade Cascade",
+      "slug": "character_fade_cascade",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Letters fade in sequentially.",
+      "implementation_note": "Create per-character masks and stagger alpha curves."
+    },
+    {
+      "name": "Word Fade Cascade",
+      "slug": "word_fade_cascade",
+      "categories": [
+        "basic_editing"
+      ],
+      "description": "Words fade in sequentially.",
+      "implementation_note": "Create one layer per word; stagger opacity with easing."
+    },
+    {
+      "name": "Kinetic Pop",
+      "slug": "kinetic_pop",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Words pop into place with scale overshoot.",
+      "implementation_note": "Animate scale from 0.8→1.1→1 using easing curves."
+    },
+    {
+      "name": "Bounce Text",
+      "slug": "bounce_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text bounces vertically before settling.",
+      "implementation_note": "Use damped sine easing on y-position."
+    },
+    {
+      "name": "Elastic Text",
+      "slug": "elastic_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text stretches and rebounds elastically.",
+      "implementation_note": "Animate x/y scale separately with overshoot."
+    },
+    {
+      "name": "Punch Zoom Title",
+      "slug": "punch_zoom_title",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text rapidly zooms toward viewer on beat.",
+      "implementation_note": "Scale text layer sharply, add motion blur with OpenCV."
+    },
+    {
+      "name": "Impact Slam",
+      "slug": "impact_slam",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slams into frame with shake.",
+      "implementation_note": "Animate y/x position fast; add random jitter for impact frames."
+    },
+    {
+      "name": "Drop In",
+      "slug": "drop_in",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text falls from top with slight bounce.",
+      "implementation_note": "Position y follows gravity-like curve; optional shadow squash."
+    },
+    {
+      "name": "Rise Up",
+      "slug": "rise_up",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slides upward while fading in.",
+      "implementation_note": "Animate y-position and alpha."
+    },
+    {
+      "name": "Slide Left Text",
+      "slug": "slide_left_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slides in from right to left.",
+      "implementation_note": "Move x-position from outside frame to target."
+    },
+    {
+      "name": "Slide Right Text",
+      "slug": "slide_right_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slides in from left to right.",
+      "implementation_note": "Move x-position from outside frame to target."
+    },
+    {
+      "name": "Slide Up Text",
+      "slug": "slide_up_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slides in from below.",
+      "implementation_note": "Move y-position upward with easing."
+    },
+    {
+      "name": "Slide Down Text",
+      "slug": "slide_down_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text slides in from above.",
+      "implementation_note": "Move y-position downward with easing."
+    },
+    {
+      "name": "Overshoot Slide",
+      "slug": "overshoot_slide",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text passes target then settles back.",
+      "implementation_note": "Use cubic ease-out plus overshoot correction."
+    },
+    {
+      "name": "Spring Words",
+      "slug": "spring_words",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Each word springs into place.",
+      "implementation_note": "Stagger per-word transform with spring equation."
+    },
+    {
+      "name": "Scale Cascade",
+      "slug": "scale_cascade",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Letters scale in one after another.",
+      "implementation_note": "Per-character layers with staggered scale."
+    },
+    {
+      "name": "Wave Text",
+      "slug": "wave_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Characters move in sine-wave offsets.",
+      "implementation_note": "Apply y-offset per character: amp*sin(freq*time + phase*i)."
+    },
+    {
+      "name": "Jitter Text",
+      "slug": "jitter_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text vibrates randomly.",
+      "implementation_note": "Add small random x/y offsets per frame."
+    },
+    {
+      "name": "Shake Text",
+      "slug": "shake_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text shakes during emphasis.",
+      "implementation_note": "Random jitter amplitude decays over time."
+    },
+    {
+      "name": "Wiggle Text",
+      "slug": "wiggle_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text position and rotation wobble smoothly.",
+      "implementation_note": "Use low-frequency sine/noise for transform."
+    },
+    {
+      "name": "Spin In",
+      "slug": "spin_in",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text rotates into place.",
+      "implementation_note": "Rotate text image layer with PIL/OpenCV affine transform."
+    },
+    {
+      "name": "Spin Out",
+      "slug": "spin_out",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text rotates away and fades.",
+      "implementation_note": "Reverse spin-in with alpha drop."
+    },
+    {
+      "name": "Flip X",
+      "slug": "flip_x",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text flips around horizontal axis.",
+      "implementation_note": "Approximate with vertical scale compression/inversion or use 3D via Blender."
+    },
+    {
+      "name": "Flip Y",
+      "slug": "flip_y",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text flips around vertical axis.",
+      "implementation_note": "Approximate with horizontal scale compression/inversion."
+    },
+    {
+      "name": "3D Rotate Title",
+      "slug": "3d_rotate_title",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Title rotates in perspective.",
+      "implementation_note": "Use OpenCV perspective transform or Blender for true 3D."
+    },
+    {
+      "name": "Orbit Text",
+      "slug": "orbit_text",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Words orbit around a center point.",
+      "implementation_note": "Position word layers using polar coordinates over time."
+    },
+    {
+      "name": "Circular Text Motion",
+      "slug": "circular_text_motion",
+      "categories": [
+        "kinetic_typography"
+      ],
+      "description": "Text follows circular path.",
+      "implementation_note": "Compute x/y along circle; optional rotate tangent."
+    },
+    {
+      "name": "Linear Wipe Reveal",
+      "slug": "linear_wipe_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text is revealed by a straight moving mask.",
+      "implementation_note": "Create alpha mask rectangle moving across text image."
+    },
+    {
+      "name": "Left Wipe",
+      "slug": "left_wipe",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text reveals from left to right.",
+      "implementation_note": "Animate mask width."
+    },
+    {
+      "name": "Right Wipe",
+      "slug": "right_wipe",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text reveals from right to left.",
+      "implementation_note": "Animate mask origin/width."
+    },
+    {
+      "name": "Top Wipe",
+      "slug": "top_wipe",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text reveals from top down.",
+      "implementation_note": "Animate vertical mask height."
+    },
+    {
+      "name": "Bottom Wipe",
+      "slug": "bottom_wipe",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text reveals from bottom up.",
+      "implementation_note": "Animate vertical mask."
+    },
+    {
+      "name": "Split Reveal",
+      "slug": "split_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text reveals from center outward.",
+      "implementation_note": "Two masks expand from center."
+    },
+    {
+      "name": "Center Slice Reveal",
+      "slug": "center_slice_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text opens from a thin central strip.",
+      "implementation_note": "Scale a center mask outward."
+    },
+    {
+      "name": "Circle Reveal",
+      "slug": "circle_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Circular mask expands to show text.",
+      "implementation_note": "Draw expanding ellipse mask with PIL."
+    },
+    {
+      "name": "Radial Reveal",
+      "slug": "radial_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Wedge-shaped mask sweeps around text.",
+      "implementation_note": "Generate polar angle mask with numpy."
+    },
+    {
+      "name": "Diagonal Wipe",
+      "slug": "diagonal_wipe",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text revealed by diagonal band.",
+      "implementation_note": "Use slanted polygon mask moving across frame."
+    },
+    {
+      "name": "Venetian Blinds",
+      "slug": "venetian_blinds",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text appears through multiple horizontal strips.",
+      "implementation_note": "Animate multiple stripe masks."
+    },
+    {
+      "name": "Vertical Blinds",
+      "slug": "vertical_blinds",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text appears through vertical strips.",
+      "implementation_note": "Animate column masks."
+    },
+    {
+      "name": "Shutter Reveal",
+      "slug": "shutter_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Multiple panels open to expose text.",
+      "implementation_note": "Animate rectangular panel masks."
+    },
+    {
+      "name": "Box Reveal",
+      "slug": "box_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text revealed inside expanding rectangle.",
+      "implementation_note": "Animate rectangle mask dimensions."
+    },
+    {
+      "name": "Frame Reveal",
+      "slug": "frame_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Border draws first, then text appears.",
+      "implementation_note": "Animate line drawing with OpenCV, then alpha fade text."
+    },
+    {
+      "name": "Ink Matte Reveal",
+      "slug": "ink_matte_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Organic ink-like mask reveals text.",
+      "implementation_note": "Use noise texture threshold over time."
+    },
+    {
+      "name": "Smoke Matte Reveal",
+      "slug": "smoke_matte_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text emerges through smoke-shaped alpha.",
+      "implementation_note": "Generate noise mask or import smoke matte video."
+    },
+    {
+      "name": "Paint Brush Reveal",
+      "slug": "paint_brush_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Brush stroke reveals title.",
+      "implementation_note": "Use brush alpha texture swept across text."
+    },
+    {
+      "name": "Scratch Reveal",
+      "slug": "scratch_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text appears through scratches.",
+      "implementation_note": "Composite scratch mask; animate threshold."
+    },
+    {
+      "name": "Glitch Mask Reveal",
+      "slug": "glitch_mask_reveal",
+      "categories": [
+        "mask_reveal"
+      ],
+      "description": "Text appears in broken digital slices.",
+      "implementation_note": "Random horizontal slice masks with staggered offsets."
+    },
+    {
+      "name": "RGB Split Text",
+      "slug": "rgb_split_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text channels separate into red, green, and blue offsets.",
+      "implementation_note": "Split PIL image channels and offset each before recompositing."
+    },
+    {
+      "name": "Chromatic Aberration",
+      "slug": "chromatic_aberration",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Subtle RGB edge separation.",
+      "implementation_note": "Offset red/blue channels by a few pixels."
+    },
+    {
+      "name": "Digital Glitch Title",
+      "slug": "digital_glitch_title",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text fragments into horizontal corrupted slices.",
+      "implementation_note": "Slice image rows and offset slices randomly per frame."
+    },
+    {
+      "name": "Data Moshing Text",
+      "slug": "data_moshing_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text appears smeared and corrupted.",
+      "implementation_note": "Approximate by frame blending, displacement maps, and block artifacts."
+    },
+    {
+      "name": "Pixel Sort Text",
+      "slug": "pixel_sort_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text edges smear into pixel-sorted streaks.",
+      "implementation_note": "Use numpy to sort pixel rows/columns based on luminance."
+    },
+    {
+      "name": "Scanline Text",
+      "slug": "scanline_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "CRT scanlines overlay text.",
+      "implementation_note": "Overlay alternating dark horizontal lines."
+    },
+    {
+      "name": "CRT Flicker",
+      "slug": "crt_flicker",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text flickers like an old monitor.",
+      "implementation_note": "Modulate brightness/alpha with random noise."
+    },
+    {
+      "name": "VHS Title",
+      "slug": "vhs_title",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Analog title with noise, scanlines, color bleed.",
+      "implementation_note": "Use OpenCV noise, blur, RGB shift, rolling bands."
+    },
+    {
+      "name": "Bad Signal",
+      "slug": "bad_signal",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text is interrupted by signal noise.",
+      "implementation_note": "Random horizontal displacement, static overlay, frame drops."
+    },
+    {
+      "name": "Terminal Text",
+      "slug": "terminal_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Monospace command-line text reveal.",
+      "implementation_note": "Use typewriter plus terminal styling."
+    },
+    {
+      "name": "Matrix Rain Behind Text",
+      "slug": "matrix_rain_behind_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Falling code behind or through title.",
+      "implementation_note": "Generate random glyph columns with PIL."
+    },
+    {
+      "name": "Hacker Decode",
+      "slug": "hacker_decode",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Random characters resolve into final text.",
+      "implementation_note": "Per-character random glyph cycling until reveal time."
+    },
+    {
+      "name": "Binary Decode",
+      "slug": "binary_decode",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Binary digits transform into title.",
+      "implementation_note": "Render 0/1 substitutions per character until locked."
+    },
+    {
+      "name": "HUD Text",
+      "slug": "hud_text",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Futuristic interface title with lines and labels.",
+      "implementation_note": "Use PIL/OpenCV vector lines, monospaced text, animated masks."
+    },
+    {
+      "name": "Cyberpunk Neon Glitch",
+      "slug": "cyberpunk_neon_glitch",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Neon title with RGB glitches and flicker.",
+      "implementation_note": "Glow via blurred duplicates; add RGB split and flicker."
+    },
+    {
+      "name": "Pixelated Reveal",
+      "slug": "pixelated_reveal",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text starts blocky and resolves sharp.",
+      "implementation_note": "Downscale/upscale text layer with decreasing pixel size."
+    },
+    {
+      "name": "Block Corruption",
+      "slug": "block_corruption",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text breaks into rectangular blocks.",
+      "implementation_note": "Tile text image and randomly shift/replace blocks."
+    },
+    {
+      "name": "Glitch Flash",
+      "slug": "glitch_flash",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text appears with brief corrupted flash.",
+      "implementation_note": "Add frames of RGB split, inversion, slice offsets."
+    },
+    {
+      "name": "Static Noise Fill",
+      "slug": "static_noise_fill",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text fill contains TV static.",
+      "implementation_note": "Mask animated noise texture inside text alpha."
+    },
+    {
+      "name": "Digital Tear",
+      "slug": "digital_tear",
+      "categories": [
+        "glitch_digital"
+      ],
+      "description": "Text tears horizontally across a scanline.",
+      "implementation_note": "Displace upper/lower image segments differently."
+    },
+    {
+      "name": "Wave Distortion",
+      "slug": "wave_distortion",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text waves like water.",
+      "implementation_note": "Use sinusoidal displacement map on text image."
+    },
+    {
+      "name": "Heat Haze Text",
+      "slug": "heat_haze_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text distorted by heat shimmer.",
+      "implementation_note": "Use animated noise displacement and slight blur."
+    },
+    {
+      "name": "Liquid Ripple",
+      "slug": "liquid_ripple",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text ripples from center.",
+      "implementation_note": "Radial displacement with sine falloff."
+    },
+    {
+      "name": "Magnify Text",
+      "slug": "magnify_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Lens magnification passes over text.",
+      "implementation_note": "Apply local warp around moving circle."
+    },
+    {
+      "name": "Bulge Text",
+      "slug": "bulge_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text bulges outward.",
+      "implementation_note": "Use OpenCV remap with radial displacement."
+    },
+    {
+      "name": "Pinch Text",
+      "slug": "pinch_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text pinches inward.",
+      "implementation_note": "Inverse radial displacement."
+    },
+    {
+      "name": "Twirl Text",
+      "slug": "twirl_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text twists around center.",
+      "implementation_note": "Map polar angle offset based on radius."
+    },
+    {
+      "name": "Stretch Text",
+      "slug": "stretch_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text stretches horizontally or vertically.",
+      "implementation_note": "Animate non-uniform scale."
+    },
+    {
+      "name": "Smear Text",
+      "slug": "smear_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text smears in direction of motion.",
+      "implementation_note": "Blend shifted copies with decaying alpha."
+    },
+    {
+      "name": "Echo Trails",
+      "slug": "echo_trails",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text leaves trailing duplicates.",
+      "implementation_note": "Composite delayed copies with decreasing alpha."
+    },
+    {
+      "name": "Motion Blur Text",
+      "slug": "motion_blur_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text has directional motion blur.",
+      "implementation_note": "Convolve alpha/image with linear kernel in movement direction."
+    },
+    {
+      "name": "Zoom Blur Text",
+      "slug": "zoom_blur_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text blurs radially while zooming.",
+      "implementation_note": "Accumulate scaled copies or use radial blur approximation."
+    },
+    {
+      "name": "Broken Glass Text",
+      "slug": "broken_glass_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text shatters into angular shards.",
+      "implementation_note": "Triangulate mask into polygons; move/rotate shards individually."
+    },
+    {
+      "name": "Paper Tear Text",
+      "slug": "paper_tear_text",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text tears apart along jagged seam.",
+      "implementation_note": "Generate jagged mask; move halves apart."
+    },
+    {
+      "name": "Pixel Melt",
+      "slug": "pixel_melt",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text drips/melts into pixels.",
+      "implementation_note": "Move columns/particles downward based on random/noise."
+    },
+    {
+      "name": "Sand Dissolve",
+      "slug": "sand_dissolve",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text dissolves into particles.",
+      "implementation_note": "Sample text mask pixels into particles; animate outward/downward."
+    },
+    {
+      "name": "Particle Disperse",
+      "slug": "particle_disperse",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Letters break into particles.",
+      "implementation_note": "Use mask pixel sampling; animate particles with numpy."
+    },
+    {
+      "name": "Ash Disintegration",
+      "slug": "ash_disintegration",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text burns into ash particles.",
+      "implementation_note": "Edge burn mask plus particles drifting upward."
+    },
+    {
+      "name": "Fragment Explosion",
+      "slug": "fragment_explosion",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Text breaks into chunks outward.",
+      "implementation_note": "Tile/contour text mask; animate pieces radially."
+    },
+    {
+      "name": "Magnetic Assemble",
+      "slug": "magnetic_assemble",
+      "categories": [
+        "distortion_warp"
+      ],
+      "description": "Particles assemble into text.",
+      "implementation_note": "Reverse particle disperse animation."
+    },
+    {
+      "name": "Neon Glow Text",
+      "slug": "neon_glow_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Bright neon outline and glow.",
+      "implementation_note": "Render text stroke; blur duplicates with additive blend."
+    },
+    {
+      "name": "Neon Flicker",
+      "slug": "neon_flicker",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Neon sign flickers irregularly.",
+      "implementation_note": "Random alpha/brightness modulation."
+    },
+    {
+      "name": "Light Sweep",
+      "slug": "light_sweep",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Bright highlight sweeps across text.",
+      "implementation_note": "Moving gradient clipped to text alpha."
+    },
+    {
+      "name": "Glow Pulse",
+      "slug": "glow_pulse",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text glow expands and contracts.",
+      "implementation_note": "Animate blur radius and opacity of glow layer."
+    },
+    {
+      "name": "Aura Text",
+      "slug": "aura_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Soft aura around letters.",
+      "implementation_note": "Create blurred alpha mask behind text."
+    },
+    {
+      "name": "Laser Scan Text",
+      "slug": "laser_scan_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Laser line scans and reveals title.",
+      "implementation_note": "Animate thin bright line and trailing glow."
+    },
+    {
+      "name": "Hologram Text",
+      "slug": "hologram_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Semi-transparent text with scanlines and shimmer.",
+      "implementation_note": "Alpha modulation, scanlines, RGB shift."
+    },
+    {
+      "name": "Projected Light Text",
+      "slug": "projected_light_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text appears as projected light on surface.",
+      "implementation_note": "Perspective transform, blend mode screen, blur/noise."
+    },
+    {
+      "name": "Spotlight Text",
+      "slug": "spotlight_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text revealed by moving spotlight.",
+      "implementation_note": "Circular/elliptical light mask moves over text."
+    },
+    {
+      "name": "Shadow Cast Title",
+      "slug": "shadow_cast_title",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text casts long cinematic shadows.",
+      "implementation_note": "Duplicate text mask offset/blurred; create long-shadow by repeated offsets."
+    },
+    {
+      "name": "Gold Shine",
+      "slug": "gold_shine",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Metallic shine passes across letters.",
+      "implementation_note": "Animate gradient highlight over masked text."
+    },
+    {
+      "name": "Chrome Shine",
+      "slug": "chrome_shine",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "High-contrast reflective shine.",
+      "implementation_note": "Use multi-stop gradient fill and moving highlight."
+    },
+    {
+      "name": "Fire Glow",
+      "slug": "fire_glow",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Warm glow pulsing around text.",
+      "implementation_note": "Glow layer in warm tones; add noise flicker."
+    },
+    {
+      "name": "Electric Outline",
+      "slug": "electric_outline",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Electric strokes around text.",
+      "implementation_note": "Draw jittery outline paths; animate noise/brightness."
+    },
+    {
+      "name": "Lightning Text",
+      "slug": "lightning_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Lightning arcs interact with title.",
+      "implementation_note": "Generate jagged polylines between points; composite glow."
+    },
+    {
+      "name": "Strobe Title",
+      "slug": "strobe_title",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text flashes in strobe rhythm.",
+      "implementation_note": "Alternate alpha/brightness per beat/frame."
+    },
+    {
+      "name": "Flash Frame Title",
+      "slug": "flash_frame_title",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Title appears in a white flash.",
+      "implementation_note": "Add white ColorClip overlay around text intro."
+    },
+    {
+      "name": "Lens Dust Sparkle",
+      "slug": "lens_dust_sparkle",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Tiny sparkles around text.",
+      "implementation_note": "Particle dots with random twinkle alpha."
+    },
+    {
+      "name": "Star Sparkle Text",
+      "slug": "star_sparkle_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Star-shaped sparkles on letter edges.",
+      "implementation_note": "Place animated sparkle sprites near text bounding box/mask edge."
+    },
+    {
+      "name": "Bokeh Text",
+      "slug": "bokeh_text",
+      "categories": [
+        "light_neon"
+      ],
+      "description": "Text sits over animated bokeh lights.",
+      "implementation_note": "Generate blurred circles moving slowly behind/inside text."
+    }
+  ]
+}
